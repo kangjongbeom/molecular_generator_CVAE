@@ -1,8 +1,6 @@
-# Conditional CVAE
+# Conditional VAE
 
-## Object : comparison with Smiles & Selfies
-
-## dataset : QM9 (You can use a larget dataset if desired)
+## dataset : QM9
 
 Based on the Aspuru-Guzik group's Selfies repository, add conditional functionality to the basic VAE.
 
