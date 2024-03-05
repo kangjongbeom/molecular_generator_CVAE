@@ -9,13 +9,13 @@ from model_utils import *
 
 current_mode = 'SELFIES'
 try:
-    os.mkdir('/home/kangjongbeom/Desktop/study/torch/selfies/examples/molecular_generator/selfies_cvae_result')
-    saved_loc = os.path.join('/home/kangjongbeom/Desktop/study/torch/selfies/examples/molecular_generator/selfies_cvae_result',current_mode)
+    os.mkdir('./molecular_generator/selfies_cvae_result')
+    saved_loc = os.path.join('./molecular_generator/selfies_cvae_result',current_mode)
     os.mkdir(saved_loc)
     print(f'Save file loc : {saved_loc}')
     writer = SummaryWriter(saved_loc)
 except:
-    saved_loc = os.path.join('/home/kangjongbeom/Desktop/study/torch/selfies/examples/molecular_generator/selfies_cvae_result',current_mode)
+    saved_loc = os.path.join('./molecular_generator/selfies_cvae_result',current_mode)
     print(f'Save file loc : {saved_loc}')
     writer = SummaryWriter(saved_loc)
 

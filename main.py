@@ -129,34 +129,3 @@ def load_models():
     decoder = torch.load('{}/D_selfies_2'.format(out_dir))  # Load saved decoder
     return encoder, decoder
 
-# 저장된 모델 불러오기
-# encoder, decoder = load_models()
-# a,b,c,d,e,f = get_selfie_and_smiles_encodings_for_dataset('datasets/0SelectedSMILES_QM9.txt')
-# calculate_properties('CCCCCCCCCCCC')
-# a = latent_space_quality_test(encoder,decoder,b,500,c,torch.tensor([100]))
-# pro_set = 0
-# for i in a:
-#     smi = sf.decoder(i)
-#     # print(smi)
-#     pro_set += int(calculate_properties(smi)[-1])
-#     # print(is_correct_smiles(i))
-
-# print(pro_set/500)
-    
-# ### Trash
-# torch.manual_seed(42)
-
-# drug = torch.tensor([[1],[2],[3],[4],[5]])
-# target = torch.tensor([[1],[2],[3],[4],[5]])
-
-# # 동일한 무작위 인덱스 생성
-# indices = torch.randperm(drug.size()[0])
-
-# # 데이터 섞기
-# drug = drug[indices]
-# target = target[indices]
-
-
-# print(drug)
-
-# print(target)

@@ -14,14 +14,14 @@ class VAEEncoder(nn.Module):
         self.latent_dimension = latent_dimension
 
         # Reduce dimension up to second last layer of Encoder
-        self.embedding = nn.Embedding(vocab_size, vocab_size*5,padding_idx=padding_idx) ## padding_idx ?
+        self.embedding = nn.Embedding(vocab_size, vocab_size*5,padding_idx=padding_idx) ## i don't know why but it's not useful.... OTL
 
         self.encode_cnn = nn.Sequential(
             nn.Conv1d(in_channels=1,out_channels=8,kernel_size=2,stride=2,padding=1),
             nn.ReLU(),
             nn.Conv1d(in_channels=8,out_channels=16,kernel_size=3,stride=2,padding=1),
             nn.ReLU(),
-        )
+        ) # lkiewise embedding it's also useless...
 
         self.encode_nn = nn.Sequential(
             nn.Linear(in_dimension+condition_dimension, layer_1d),
@@ -49,7 +49,7 @@ class VAEEncoder(nn.Module):
         """
         Pass throught the Encoder
         """
-        # Get results of encoder network
+       
         c = c.to(x.device) 
         # x = torch.argmax(x,dim=1) # one-hot -> numerical encoding
         # x = self.embedding(x) # embedding / shape : [128,76]
@@ -57,7 +57,7 @@ class VAEEncoder(nn.Module):
         # x = x.permute(1,0,2) # [128, 1 , 76]
         # x = self.encode_cnn(x) # [128, 32, 9]
 
-        # x = torch.flatten(x, start_dim=1)
+        # x = torch.flatten(x, start_dim=1)  # it's for embedding and cnn / but i can't get useful result when i used it
         x = torch.cat((x,c), dim=1) # concat
 
         h1 = self.encode_nn(x)
