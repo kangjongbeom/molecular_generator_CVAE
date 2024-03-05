@@ -1,5 +1,12 @@
 # Conditional CVAE
 
-Using Smiles & Selfies
+## Object : comparison with Smiles & Selfies
 
-aspuru-guzik-group의 selfies 레포지토리를 보고 기본적으로 있는 vae에 conditinal를 추가했습니다.
+## dataset : QM9 (You can use a larget dataset if desired)
+
+Based on the Aspuru-Guzik group's Selfies repository, add conditional functionality to the basic VAE.
+
+- Utilize a larger dataset if necessary, such as qm9.
+- Refer to the calculate_properties function in utils.py to customize desired conditions.
+- Utilize Tensorboard to visualize various metrics such as Reconstruction, Diversity, Validity, and loss. Verify real results (generated smiles / selfies) from the validation set.
+- Update scores and adjust model weights accordingly for storage (See test.ipynb for reference).
