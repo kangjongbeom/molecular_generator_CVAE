@@ -1,0 +1,23 @@
+data:
+  batch_size: 128 # 128
+  smiles_file: datasets/0SelectedSMILES_QM9.txt
+  type_of_encoding: 1 # smiles : 0 selfies : 1
+# datasets/dataJ_250k_rndm_zinc_drugs_clean.txt
+# datasets/0SelectedSMILES_QM9.txt
+decoder:
+  latent_dimension: 50 #50
+  gru_neurons_num: 128 #100
+  gru_stack_size: 2 # 1
+
+encoder:
+  layer_1d: 128 # 100
+  layer_2d: 128 # 100
+  layer_3d: 128 # 100
+  latent_dimension: 50 # 50
+
+training:
+  KLD_alpha: 1.0e-05
+  lr_enc: 0.0001
+  lr_dec: 0.0001
+  num_epochs: 1000  # 5000
+  sample_num: 1000
