@@ -100,7 +100,7 @@ class VAEEncoder(nn.Module):
 #         """
 #         A forward pass throught the entire model.
 #         """
-#         c_expanded = c.unsqueeze(0).expand(z.size(0),-1,-1) ############ for match with z size
+#         c_expanded = c.unsqueeze(0).expand(z.size(0),-1,-1) 
 #         c_expanded = c_expanded.to(z.device)
 #         z = torch.cat((z,c_expanded), dim=2) # shape : 1 128 51
 
@@ -144,9 +144,9 @@ class VAEDecoder(nn.Module):
         """
         A forward pass throught the entire model.
         """
-        c_expanded = c.unsqueeze(0).expand(z.size(0),-1,-1) ############ for match with z size
+        c_expanded = c.unsqueeze(0).expand(z.size(0),-1,-1) ############ for match with z shape
         c_expanded = c_expanded.to(z.device)
-        z = torch.cat((z,c_expanded), dim=2) # should check
+        z = torch.cat((z,c_expanded), dim=2) 
 
         # Decode
         l1, hidden = self.decode_RNN(z, hidden)
